@@ -28,21 +28,39 @@ const data = {
       url: '/base64',
       items: [
         {
-          title: 'Encode',
-          url: '/base64/encode',
-        },
-        {
           title: 'Decode',
           url: '/base64/decode',
         },
-      ],
+        {
+          title: 'Encode',
+          url: '/base64/encode',
+        },
+      ].sort((a, b) => a.title.localeCompare(b.title)),
     },
     {
       title: 'Case Converter',
       url: '/convert-case',
       description: 'Convert between different case styles',
     },
-  ],
+    {
+      title: 'JSON',
+      url: '/json',
+      items: [
+        {
+          title: 'Compare',
+          url: '/json/compare',
+        },
+        {
+          title: 'Format & Validate',
+          url: '/json/format',
+        },
+        {
+          title: 'Minify',
+          url: '/json/minify',
+        },
+      ].sort((a, b) => a.title.localeCompare(b.title)),
+    },
+  ].sort((a, b) => a.title.localeCompare(b.title)),
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
