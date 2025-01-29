@@ -1,5 +1,8 @@
 import * as React from 'react'
 
+import type { LinkProps } from 'next/link'
+import Link from 'next/link'
+
 import { Slot } from '@radix-ui/react-slot'
 import { ChevronRight, MoreHorizontal } from 'lucide-react'
 
@@ -36,15 +39,17 @@ BreadcrumbItem.displayName = 'BreadcrumbItem'
 
 const BreadcrumbLink = React.forwardRef<
   HTMLAnchorElement,
-  React.ComponentPropsWithoutRef<'a'> & {
-    asChild?: boolean
-  }
->(({ asChild, className, ...props }, ref) => {
-  const Comp = asChild ? Slot : 'a'
+  Omit<React.ComponentPropsWithoutRef<'a'>, keyof LinkProps> &
+    LinkProps & {
+      asChild?: boolean
+    }
+>(({ asChild, className, href, ...props }, ref) => {
+  const Comp = asChild ? Slot : Link
 
   return (
     <Comp
       ref={ref}
+      href={href}
       className={cn('transition-colors hover:text-foreground', className)}
       {...props}
     />
@@ -93,10 +98,10 @@ BreadcrumbEllipsis.displayName = 'BreadcrumbElipssis'
 
 export {
   Breadcrumb,
-  BreadcrumbList,
+  BreadcrumbEllipsis,
   BreadcrumbItem,
   BreadcrumbLink,
+  BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-  BreadcrumbEllipsis,
 }
