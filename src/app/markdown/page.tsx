@@ -30,6 +30,57 @@ export default function MarkdownPage() {
               preview="live"
             />
           </div>
+          <style jsx global>{`
+            .w-md-editor-preview ul {
+              list-style-type: disc;
+              padding-left: 2em;
+            }
+            .w-md-editor-preview ol {
+              list-style-type: decimal;
+              padding-left: 2em;
+            }
+            .w-md-editor-preview blockquote {
+              border-left: 4px solid #ddd;
+              padding-left: 1em;
+              margin: 1em 0;
+              color: #666;
+            }
+            .w-md-editor-preview code {
+              background-color: #f5f5f5;
+              padding: 0.2em 0.4em;
+              border-radius: 3px;
+              font-family: monospace;
+            }
+            .w-md-editor-preview pre {
+              background-color: #f5f5f5;
+              padding: 1em;
+              border-radius: 5px;
+              overflow-x: auto;
+            }
+            .w-md-editor-preview table {
+              border-collapse: collapse;
+              width: 100%;
+              margin: 1em 0;
+            }
+            .w-md-editor-preview th,
+            .w-md-editor-preview td {
+              border: 1px solid #ddd;
+              padding: 8px;
+              text-align: left;
+            }
+            .w-md-editor-preview th {
+              background-color: #f5f5f5;
+            }
+            .w-md-editor-preview hr {
+              border: none;
+              border-top: 1px solid #ddd;
+              margin: 1em 0;
+            }
+            .w-md-editor-preview img {
+              max-width: 100%;
+              height: auto;
+            }
+          `}</style>
         </CardContent>
       </Card>
     </div>
