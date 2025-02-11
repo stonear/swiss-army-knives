@@ -65,6 +65,11 @@ const data = {
         },
       ].sort((a, b) => a.title.localeCompare(b.title)),
     },
+    {
+      title: 'Markdown Editor',
+      url: '/markdown',
+      description: 'Edit and preview markdown content in real-time',
+    },
   ].sort((a, b) => a.title.localeCompare(b.title)),
 }
 
