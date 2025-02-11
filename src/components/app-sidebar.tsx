@@ -43,6 +43,11 @@ const data = {
       description: 'Convert between different case styles',
     },
     {
+      title: 'Character Counter',
+      url: '/character-counter',
+      description: 'Count characters, words, lines, and more',
+    },
+    {
       title: 'JSON',
       url: '/json',
       items: [
