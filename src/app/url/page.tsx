@@ -13,8 +13,8 @@ export default function UrlPage() {
         <CardContent className="space-y-4">
           <p>
             URL encoding converts characters into a format that can be transmitted over the
-            Internet. It replaces unsafe ASCII characters with a "%" followed by two hexadecimal
-            digits. This is also known as percent-encoding.
+            Internet. It replaces unsafe ASCII characters with a &ldquo;%&rdquo; followed by two
+            hexadecimal digits. This is also known as percent-encoding.
           </p>
           <p>Common use cases include:</p>
           <ul className="list-disc space-y-2 pl-6">
