@@ -38,6 +38,20 @@ const data = {
       ].sort((a, b) => a.title.localeCompare(b.title)),
     },
     {
+      title: 'URL',
+      url: '/url',
+      items: [
+        {
+          title: 'Decode',
+          url: '/url/decode',
+        },
+        {
+          title: 'Encode',
+          url: '/url/encode',
+        },
+      ].sort((a, b) => a.title.localeCompare(b.title)),
+    },
+    {
       title: 'Case Converter',
       url: '/convert-case',
       description: 'Convert between different case styles',
