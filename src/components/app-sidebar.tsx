@@ -21,6 +21,9 @@ import {
   SidebarRail,
 } from '@/components/ui/sidebar'
 
+// Utility function for consistent sorting
+const sortByTitle = <T extends { title: string }>(a: T, b: T) => a.title.localeCompare(b.title)
+
 const data = {
   navMain: [
     {
@@ -35,21 +38,7 @@ const data = {
           title: 'Encode',
           url: '/base64/encode',
         },
-      ].sort((a, b) => a.title.localeCompare(b.title)),
-    },
-    {
-      title: 'URL',
-      url: '/url',
-      items: [
-        {
-          title: 'Decode',
-          url: '/url/decode',
-        },
-        {
-          title: 'Encode',
-          url: '/url/encode',
-        },
-      ].sort((a, b) => a.title.localeCompare(b.title)),
+      ].sort(sortByTitle),
     },
     {
       title: 'Case Converter',
@@ -60,6 +49,28 @@ const data = {
       title: 'Character Counter',
       url: '/character-counter',
       description: 'Count characters, words, lines, and more',
+    },
+    {
+      title: 'Hash',
+      url: '/hash',
+      items: [
+        {
+          title: 'MD5',
+          url: '/hash/md5',
+        },
+        {
+          title: 'SHA-1',
+          url: '/hash/sha1',
+        },
+        {
+          title: 'SHA-256',
+          url: '/hash/sha256',
+        },
+        {
+          title: 'SHA-512',
+          url: '/hash/sha512',
+        },
+      ].sort(sortByTitle),
     },
     {
       title: 'JSON',
@@ -77,14 +88,28 @@ const data = {
           title: 'Minify',
           url: '/json/minify',
         },
-      ].sort((a, b) => a.title.localeCompare(b.title)),
+      ].sort(sortByTitle),
     },
     {
       title: 'Markdown Editor',
       url: '/markdown',
       description: 'Edit and preview markdown content in real-time',
     },
-  ].sort((a, b) => a.title.localeCompare(b.title)),
+    {
+      title: 'URL',
+      url: '/url',
+      items: [
+        {
+          title: 'Decode',
+          url: '/url/decode',
+        },
+        {
+          title: 'Encode',
+          url: '/url/encode',
+        },
+      ].sort(sortByTitle),
+    },
+  ].sort(sortByTitle),
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
